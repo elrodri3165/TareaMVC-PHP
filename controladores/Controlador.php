@@ -18,8 +18,6 @@ class Controlador{
         if (isset ($_GET['ruta'])){
             $this->ruta = $_GET['ruta'];
             $this->EjecutaRuta();
-        }else{
-
         }
     }
 
@@ -28,10 +26,11 @@ class Controlador{
         
         if (is_file($ruta)){
             $contenido_parcial = file_get_contents($ruta);
-            $this->contenido = str_replace("<main> </main>", $contenido_parcial, $this->contenido);
         }else{
             $contenido_parcial = file_get_contents('vistas/error404.php');
         }
+        
+        $this->contenido = str_replace("<main></main>", $contenido_parcial, $this->contenido);
         
     }
 
