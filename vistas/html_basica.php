@@ -55,20 +55,20 @@
                 <div class="modal-body">
                     <form class="" action="" method="post">
                         <div class="form-floating mb-3">
-                            <input type="text" name="apellido" class="form-control rounded-3" id="floatingInput" placeholder="Apellido" required>
-                            <label for="floatingInput">Apellido</label>
+                            <input type="text" name="apellido" class="form-control rounded-3" id="apellido" placeholder="Apellido" required>
+                            <label for="apellido">Apellido</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="nombre" class="form-control rounded-3" id="floatingInput" placeholder="Nombre" required>
-                            <label for="floatingInput">Nombre</label>
+                            <input type="text" name="nombre" class="form-control rounded-3" id="nombre" placeholder="Nombre" required>
+                            <label for="nombre">Nombre</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com" required>
-                            <label for="floatingInput">Email address</label>
+                            <input type="email" name="email" class="form-control rounded-3" id="email" placeholder="name@example.com" required>
+                            <label for="email">Email address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" name="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" required>
-                            <label for="floatingPassword">Password</label>
+                            <input type="password" name="password" class="form-control rounded-3" id="password" placeholder="Password" required>
+                            <label for="password">Password</label>
                         </div>
                         <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Crear usuario</button>
 
@@ -92,12 +92,12 @@
                 <div class="modal-body">
                     <form class="" action="" method="post">
                         <div class="form-floating mb-3">
-                            <input type="email" name="login_email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com" required>
-                            <label for="floatingInput">Email address</label>
+                            <input type="email" name="login_email" class="form-control rounded-3" id="login_email" placeholder="name@example.com" required>
+                            <label for="login_email">Email address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" name="login_password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" required>
-                            <label for="floatingPassword">Password</label>
+                            <input type="password" name="login_password" class="form-control rounded-3" id="login_password" placeholder="Password" required>
+                            <label for="login_password">Password</label>
                         </div>
                         <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
 
@@ -173,6 +173,8 @@
             </footer>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/ajax.js" type="text/javascript"></script>
 </body>
 
 </html>

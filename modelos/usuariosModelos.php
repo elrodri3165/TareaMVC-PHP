@@ -56,5 +56,32 @@ class usuariosModelos{
         $resultado = null;
     }
     
+
+    public static function ValidarEmail($email){
+        $query = 'SELECT email FROM usuarios WHERE email = :email AND activo = 1';
+        
+        $conexion = conexion::conectar();
+        $resultado = $conexion->prepare($query);
+            
+        $resultado ->bindParam(":email", $email, PDO::PARAM_STR);
+        //$resultado ->bindParam(":password", $datos['password'], PDO::PARAM_STR);
+        
+        if($resultado->execute()){
+            $result = $resultado->fetch(PDO::FETCH_ASSOC);
+            
+            if($result != null ){
+                $array = [
+                    'resultado' => 'true',
+                    'respuesta' => 'true'
+                ];
+                return $array;
+            }   
+        }else{
+            return false;
+        }
+        
+        $resultado ->closeCursor();
+        $resultado = null;
+    }
     
 }
