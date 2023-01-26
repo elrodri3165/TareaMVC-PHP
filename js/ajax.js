@@ -3,12 +3,12 @@ $("#email").change(function () {
 
 
 	let datos = new FormData();
-	datos.append("validarEmail", email);
+	datos.append("email", email);
 	
 
 	$.ajax({
 		url: "ajax/ajaxEmail.php",
-		method: "POST",
+		method: "GET",
 		data: datos,
 		cache: false,
 		contentType: false,

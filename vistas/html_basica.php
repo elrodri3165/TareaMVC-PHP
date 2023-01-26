@@ -71,6 +71,10 @@
                             <label for="password">Password</label>
                         </div>
                         <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Crear usuario</button>
+                        
+                        <div id="alerta">
+                            
+                        </div>
 
                     </form>
                 </div>
