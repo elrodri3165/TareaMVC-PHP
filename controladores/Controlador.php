@@ -86,4 +86,10 @@ class Controlador{
         session_start();
         session_destroy();
     }
+    
+    public static function ValidarEmail($email){
+        require_once '../modelos/usuariosModelos.php';
+        $resultado = usuariosModelos::ValidarEmail($email);
+        return $resultado;
+    }
 }

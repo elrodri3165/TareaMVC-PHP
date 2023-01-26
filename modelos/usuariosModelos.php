@@ -70,11 +70,7 @@ class usuariosModelos{
             $result = $resultado->fetch(PDO::FETCH_ASSOC);
             
             if($result != null ){
-                $array = [
-                    'resultado' => 'true',
-                    'respuesta' => 'true'
-                ];
-                return $array;
+                return $result;
             }   
         }else{
             return false;
