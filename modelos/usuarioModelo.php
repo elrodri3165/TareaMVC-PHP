@@ -1,7 +1,7 @@
 <?php
 require_once 'conexion.php';
 
-class usuariosModelos{
+class usuarioModelo{
         public static function CrearUsuario($datos){
         
         $query = 'INSERT INTO usuarios (apellido, nombre, email, password, activo) VALUES (:apellido, :nombre, :email, :password, :activo)';
@@ -18,6 +18,8 @@ class usuariosModelos{
         $resultado_sql = $resultado->execute();
             
         if($resultado_sql){
+            $resultado ->closeCursor();
+            $resultado = null;
             return true;
         }else{
             echo '<pre>';
