@@ -23,12 +23,14 @@
                 <tr>
                     <th>ID_PRODUCTO</th>
                     <th>NOMBRE</th>
+                    <th>Modifcar</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
 
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -54,7 +56,13 @@
                     {
                         data: 'id_producto',
                         render: function(data, type, row) {
-                            return '<a class="btn btn-danger" role="button" href="index.php?ruta=eliminar&id_producto=' + data + '">Elimnar<a/>';
+                            return '<a class="btn btn-success" role="button" href="index.php?ruta=login&id_producto=' + data + '">Modificar<a/>';
+                    }
+                    },
+                    {
+                        data: 'id_producto',
+                        render: function(data, type, row) {
+                            return '<a class="btn btn-danger" role="button" href="index.php?ruta=eliminar&id_producto=' + data + '">Eliminar<a/>';
                         }
                     },
                 ],
@@ -109,6 +117,12 @@
                 }
             }
         });
+        
+        
+        if(producto != null){
+            $('#input').val(producto['0'].nombre);
+            $('#id_producto').val(producto['0'].id_producto);
+        }
 
     </script>
 

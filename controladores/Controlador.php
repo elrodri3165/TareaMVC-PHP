@@ -10,6 +10,7 @@ class Controlador{
         require_once 'modelos/productoModelo.php';
         require_once 'modelos/usuarioModelo.php';
         
+        
         if (isset ($_GET['ruta'])){
             $this->ruta = $_GET['ruta'];
         }
@@ -120,11 +121,16 @@ class Controlador{
         
         if (isset ($_SESSION['user'])){
             $contenido_parcial = file_get_contents('vistas/login.php');
-            require_once 'modelos/productoModelo.php';
             $productos = productoModelo::BuscarProductos();
             echo '<script> var productos = ';
             echo json_encode($productos);
             echo ';</script>';
+            
+            if (isset ($_GET['id_producto'])){
+                $producto = productoModelo::BuscarProductos($_GET['id_producto']);echo '<script> var producto = ';
+                echo json_encode($producto);
+                echo ';</script>';
+            }
             $this->contenido = str_replace("<main></main>", $contenido_parcial, $this->contenido);
         }
         die;

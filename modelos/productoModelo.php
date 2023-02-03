@@ -89,7 +89,7 @@ class productoModelo{
     
     public static function EditarProducto($datos){
         
-        $query = 'UPDATE FROM productos SET nombre = :nombre, WHERE id_producto = :id_producto';
+        $query = 'UPDATE productos SET nombre = :nombre WHERE id_producto = :id_producto';
         
         $conexion = conexion::conectar();
         $resultado = $conexion->prepare($query);
