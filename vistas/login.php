@@ -2,16 +2,21 @@
     <div class="container">
         <p class="h1 text-center mb-5">Bienvenidos al login</p>
         <div class="fs-4 lh-lg bg-dark-subtle p-2 rounded-top">
-            <p>Este es el login</p>
-            <p>Solo se muestra si el usuario se logeo correctamente!</p>
+            <p>Bienvenidos al login de Usuarios</p>
             <a class="btn btn-danger btn-block" href="index.php?ruta=cerrarsesion" role="button">Salir</a>
         </div>
 
         <div class="fs-4 lh-lg bg-dark-subtle p-2 mb-2 rounded-bottom">
-            <form action="index.php" method="post">
+            <form action="index.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_producto" id="id_producto" value="">
                 <label for="input" class="form-label">Por favor ingrese producto</label>
                 <input type="text" name="producto" id="input" class="form-control mb-2" aria-describedby="Agregar Producto">
+                
+                <label for="precio" class="form-label">Por favor ingrese el precio del producto</label>
+                <input type="number" name="precio" id="precio" class="form-control mb-2" aria-describedby="Precio">
+                
+                <label for="foto" class="form-label">Por favor ingrese la foto</label>
+                <input type="file" name="foto" id="foto" class="form-control mb-2" aria-describedby="Agregar foto del producto">
 
                 <input class="btn btn-primary" type="submit" value="Guardar">
             </form>
@@ -23,6 +28,7 @@
                 <tr>
                     <th>ID_PRODUCTO</th>
                     <th>NOMBRE</th>
+                    <th>PRECIO</th>
                     <th>Modifcar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -30,6 +36,7 @@
             <tbody>
 
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -52,6 +59,9 @@
                     },
                     {
                         data: 'nombre'
+                    },
+                    {
+                        data: 'precio'
                     },
                     {
                         data: 'id_producto',
@@ -122,6 +132,7 @@
         if(producto != null){
             $('#input').val(producto['0'].nombre);
             $('#id_producto').val(producto['0'].id_producto);
+            $('#precio').val(producto['0'].precio);
         }
 
     </script>

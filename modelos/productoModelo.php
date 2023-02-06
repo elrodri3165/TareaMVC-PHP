@@ -5,12 +5,14 @@ class productoModelo{
     
         public static function CrearProducto($datos){
         
-        $query = 'INSERT INTO productos (nombre) VALUES (:nombre)';
+        $query = 'INSERT INTO productos (nombre, foto, precio) VALUES (:nombre, :foto, :precio)';
         
         $conexion = conexion::conectar();
         $resultado = $conexion->prepare($query);
                 
         $resultado ->bindParam(":nombre", $datos['nombre'], PDO::PARAM_STR);
+        $resultado ->bindParam(":foto", $datos['foto'], PDO::PARAM_STR);
+        $resultado ->bindParam(":precio", $datos['precio'], PDO::PARAM_STR);
         
         $resultado_sql = $resultado->execute();
             
@@ -30,9 +32,9 @@ class productoModelo{
     
     public static function BuscarProductos($id_productos = null){
         if ($id_productos == null){
-            $query = 'SELECT * FROM productos';
+            $query = 'SELECT id_producto, nombre, precio FROM productos';
         }else{
-            $query = 'SELECT * FROM productos WHERE id_producto = :id_producto';
+            $query = 'SELECT id_producto, nombre, precio FROM productos WHERE id_producto = :id_producto';
         }
         
         
@@ -89,13 +91,14 @@ class productoModelo{
     
     public static function EditarProducto($datos){
         
-        $query = 'UPDATE productos SET nombre = :nombre WHERE id_producto = :id_producto';
+        $query = 'UPDATE productos SET nombre = :nombre, precio = :precio WHERE id_producto = :id_producto';
         
         $conexion = conexion::conectar();
         $resultado = $conexion->prepare($query);
                 
         $resultado ->bindParam(":nombre", $datos['nombre'], PDO::PARAM_STR);
         $resultado ->bindParam(":id_producto", $datos['id_producto'], PDO::PARAM_INT);
+        $resultado ->bindParam(":precio", $datos['precio'], PDO::PARAM_INT);
         
         $resultado_sql = $resultado->execute();
             

@@ -21,6 +21,7 @@ class Controlador{
             $array = [
                 'nombre' => $_POST['producto'],
                 'id_producto' => $_POST['id_producto'],
+                'precio' => $_POST['precio'],
             ];
             
             if (productoModelo::EditarProducto($array)){
@@ -36,6 +37,8 @@ class Controlador{
         if (isset ($_POST['producto'])){
             $array = [
                 'nombre' => $_POST['producto'],
+                'foto' => addslashes(file_get_contents($_FILES['foto']['tmp_name'])),
+                'precio' => $_POST['precio'],
             ];
             
             if (productoModelo::CrearProducto($array)){

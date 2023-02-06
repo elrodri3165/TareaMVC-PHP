@@ -38,6 +38,7 @@
 
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                         <li><a href="index.php?ruta=inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
+                        <li><a href="index.php?ruta=productos" class="nav-link px-2 link-secondary">Productos</a></li>
                         <li><a href="index.php?ruta=nosotros" class="nav-link px-2 link-dark">Nosotros</a></li>
                         <li><a href="index.php?ruta=contacto" class="nav-link px-2 link-dark">Contacto</a></li>
 
@@ -53,8 +54,8 @@
             </div>
         </div>
     </header>
+    
     <main></main>
-
 
     <!-- Modal -->
     <div class="modal fade" id="modalregistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -130,31 +131,16 @@
             <footer class="py-5">
                 <div class="row">
                     <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
+                        <h5>Secciones</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="index.php?ruta=inicio" class="nav-link p-0 text-muted">Inicio</a></li>
+                            <li class="nav-item mb-2"><a href="index.php?ruta=productos" class="nav-link p-0 text-muted">Productos</a></li>
                             <li class="nav-item mb-2"><a href="index.php?ruta=nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
                             <li class="nav-item mb-2"><a href="index.php?ruta=contacto" class="nav-link p-0 text-muted">Contacto</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="index.php?ruta=inicio" class="nav-link p-0 text-muted">Inicio</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=contacto" class="nav-link p-0 text-muted">Contacto</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="index.php?ruta=inicio" class="nav-link p-0 text-muted">Inicio</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=contacto" class="nav-link p-0 text-muted">Contacto</a></li>
-                        </ul>
-                    </div>
+                    
 
                     <div class="col-md-5 offset-md-1 mb-3">
                         <form>
