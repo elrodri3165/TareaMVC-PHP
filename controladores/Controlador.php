@@ -150,4 +150,10 @@ class Controlador{
         $resultado = usuarioModelo::ValidarEmail($email);
         return $resultado;
     }
+    
+    public static function BuscarProductos(){
+        require_once '../modelos/productoModelo.php';
+        $resultado = productoModelo::BuscarProductos();
+        return $resultado;
+    }
 }
