@@ -1,3 +1,13 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="result">
+
+            
+        </div>
+    </div>
+</div>
+
+
 <script>
 $("#body").ready(function () {
 
@@ -11,16 +21,28 @@ $("#body").ready(function () {
 		success: function (respuesta) {
 		if (respuesta != null) {
 			$("#result").val("");
-
-			$("#result").parent().after(`
+            
+            for (var i = 0; i < respuesta.length; i++){
+                $("#result").append(`
 						
-						<div class="alerta alerta-advertencia bg-danger text-white p-2 rounded mb-3">
+				<div class="col">
+                    <div class="card shadow-sm">
+                        <img src="data:image/png;base64, " alt="" width="100%" height="425">
 
-								El correo electrónico ya existe en la base de datos,  por favor ingrese otro diferente
-						</div>
+                            <div class="text-center bg-dark text-white p-3"></div>
+                            <div class="card-body" style="min-height:150px;">
+                                <p class="card-text"></p>
+                                <div class="d-flex justify-content-between align-items-end">
+                                <div class="btn-group">
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 					`);
+            }
 		}
 		},
 	});
@@ -29,33 +51,3 @@ $("#body").ready(function () {
 
 </script>
    
-
-   
-<div class="album py-5 bg-light">
-    <div class="container">
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="result">
-
-            <div class="col">
-                <div class="card shadow-sm">
-
-                    <img src="data:image/png;base64, " alt="" width="100%" height="425">
-
-                    <div class="text-center bg-dark text-white p-3"></div>
-
-
-                    <div class="card-body" style="min-height:150px;">
-                        <p class="card-text"></p>
-                        <div class="d-flex justify-content-between align-items-end">
-                            <div class="btn-group">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</div>
