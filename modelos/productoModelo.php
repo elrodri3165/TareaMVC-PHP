@@ -62,6 +62,35 @@ class productoModelo{
         $resultado = null;
     }
     
+    public static function BuscarProductoFoto($id_productos){
+        
+        $query = 'SELECT foto FROM productos WHERE id_producto = :id_producto';
+             
+        
+        $conexion = conexion::conectar();
+        $resultado = $conexion->prepare($query);
+                
+        if ($id_productos != null){
+            $resultado ->bindParam(":id_producto", $id_productos, PDO::PARAM_STR);
+        }
+        
+        $resultado_sql = $resultado->execute();
+        
+        if($resultado_sql){
+            $result = $resultado->fetchAll(PDO::FETCH_ASSOC);
+            $resultado ->closeCursor();
+            $resultado = null;
+            return $result;
+        }else{
+            echo '<pre>';
+            print_r($conexion->errorInfo());
+            echo '</pre>';
+        }
+        
+        $resultado ->closeCursor();
+        $resultado = null;
+    }
+    
     
     public static function EliminarProducto($id_producto){
         

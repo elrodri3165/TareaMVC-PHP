@@ -156,4 +156,11 @@ class Controlador{
         $resultado = productoModelo::BuscarProductos();
         return $resultado;
     }
+    
+    public static function BuscarProductoFoto($id_producto){
+        require_once '../modelos/productoModelo.php';
+        $resultado = productoModelo::BuscarProductoFoto($id_producto);
+        return $resultado;
+    }
+    
 }
