@@ -21,7 +21,7 @@ $("#body").ready(function () {
 		success: function (respuesta) {
 		if (respuesta != null) {
 			$("#result").val("");
-            
+        
             for (var i = 0; i < respuesta.length; i++){
                 $("#result").append(`
 						
@@ -31,10 +31,10 @@ $("#body").ready(function () {
 
                             <div class="text-center bg-dark text-white p-3"></div>
                             <div class="card-body" style="min-height:150px;">
-                                <p class="card-text"></p>
+                                <p class="card-text">`+ respuesta[i].nombre +`</p>
                                 <div class="d-flex justify-content-between align-items-end">
                                 <div class="btn-group">
-
+                                    Precio: `+ respuesta[i].precio +`
                                 </div>
                             </div>
                         </div>
