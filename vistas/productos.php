@@ -1,4 +1,4 @@
-<div class="album py-5 bg-light">
+<div class="album py-5">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="result">
 
@@ -27,7 +27,7 @@ $("#body").ready(function () {
 						
 				<div class="col">
                     <div class="card shadow-sm">
-                        <img src="data:image/png;base64, http://localhost/TareaMVC-PHP/config/imagen.php?id_producto=`+ respuesta[i].id_producto +`" alt="" width="100%" height="425">
+                        <img src="http://localhost/TareaMVC-PHP/config/imagen.php?id_producto=`+ respuesta[i].id_producto +`" alt="" width="100%" height="425">
 
                             <div class="text-center bg-dark text-white p-3"></div>
                             <div class="card-body" style="min-height:150px;">

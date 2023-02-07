@@ -19,6 +19,7 @@ class productoModelo{
         if($resultado_sql){
             $resultado ->closeCursor();
             $resultado = null;
+            productoModelo::SubirArchivo();
             return true;
         }else{
             echo '<pre>';
@@ -143,5 +144,26 @@ class productoModelo{
         
         $resultado ->closeCursor();
         $resultado = null;
+    }
+    
+    
+    public static function SubirArchivo(){
+        $carpeta = getcwd().DIRECTORY_SEPARATOR.'img-productos'.DIRECTORY_SEPARATOR;
+        if (opendir($carpeta)==false){
+            mkdir($carpeta, 0777, true);
+        }
+        $destino = $carpeta.$_FILES['foto']['name'];
+        
+        copy ($_FILES['foto']['tmp_name'], $destino);
+        
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $destino)) {
+            echo "El fichero es válido y se subió con éxito.\n";
+            return true;
+        }
+        else {
+            echo "¡Posible ataque de subida de ficheros!\n";
+            return false;
+            die;
+        }    
     }
 }

@@ -163,4 +163,10 @@ class Controlador{
         return $resultado;
     }
     
+    
+    public static function SubirArchivos($tabla = null, $carpeta = null, $name = 'Foto'){
+        $obj = new SubirArchivos($tabla, $carpeta, $name);
+        $resultado = $obj ->Subir();
+    }
+    
 }
