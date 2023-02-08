@@ -34,7 +34,7 @@ $("#body").ready(function () {
                                 <p class="card-text">`+ respuesta[i].nombre +`</p>
                                 <div class="d-flex justify-content-between align-items-end">
                                 <div class="btn-group">
-                                    Precio: `+ respuesta[i].precio +`
+                                    Precio: $ `+ respuesta[i].precio +`
                                 </div>
                             </div>
                         </div>
