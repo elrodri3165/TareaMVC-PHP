@@ -2,55 +2,61 @@
 
 class Controlador{
 
-    public $contenido;
-    public $ruta;
+    private $contenido;
+    private $ruta;
 
     public function __construct(){
         
         require_once 'modelos/productoModelo.php';
         require_once 'modelos/usuarioModelo.php';
+    
         
-        
-        if (isset ($_GET['ruta'])){
-            $this->ruta = $_GET['ruta'];
-        }
+        $basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, -1)) . '/';
+        $this->ruta = substr($_SERVER['REQUEST_URI'], strlen($basepath));
+        if (strstr($this->ruta, '?')) $this->ruta = substr($this->ruta, 0, strpos($this->ruta, '?'));
         
         $this->contenido = file_get_contents('vistas/html_basica.php');
-    
+        
+        /***************************EDICION DE PRODUCTO********************************************/
         if (isset ($_POST['producto'], $_POST['id_producto']) && $_POST['id_producto'] != null){
             $array = [
                 'nombre' => $_POST['producto'],
                 'id_producto' => $_POST['id_producto'],
                 'precio' => $_POST['precio'],
+                'foto' => $_FILES['foto']['name'],
             ];
             
             if (productoModelo::EditarProducto($array)){
-                header('Location: index.php?ruta=login');
+                header('Location: login');
                 die;
             }else{
-                header('Location: index.php?ruta=error');
+                header('Location: login?error');
                 die;
             }
         }
+        /***************************EDICION DE PRODUCTO********************************************/
         
         
+        /***************************CREACION DE PRODUCTO*******************************************/
         if (isset ($_POST['producto'])){
             $array = [
                 'nombre' => $_POST['producto'],
-                'foto' => addslashes(file_get_contents($_FILES['foto']['tmp_name'])),
+                'foto' => $_FILES['foto']['name'],
                 'precio' => $_POST['precio'],
             ];
             
             if (productoModelo::CrearProducto($array)){
-                header('Location: index.php?ruta=login');
+                header('Location: login');
                 die;
             }else{
-                header('Location: index.php?ruta=error');
+                header('Location: login?error');
                 die;
             }
         }
+        /***************************CREACION DE PRODUCTO*******************************************/
         
         
+        /***************************VALIDACION DE USUARIOS*****************************************/
         if (isset ($_POST['login_email'], $_POST['login_password'])){
             /*voy a validar login*/
             $array = [
@@ -59,14 +65,17 @@ class Controlador{
             ];
             
             if (usuarioModelo::ValidarUsuarios($array)){
-                header('Location: index.php?ruta=login');
+                header('Location: login');
                 die;
             }else{
-                header('Location: index.php?ruta=error');
+                header('Location: login?error');
                 die;
             }
         }
+        /***************************VALIDACION DE USUARIOS*****************************************/
         
+        
+        /***************************CREACION DE USUARIOS*******************************************/
         if (isset ($_POST['apellido'], $_POST['nombre'], $_POST['email'], $_POST['password'])){
             $array = [
                 'apellido' => $_POST['apellido'],
@@ -78,11 +87,13 @@ class Controlador{
             usuarioModelo::CrearUsuario($array);
             /*redirecciono para que no se cree dos veces 
             el mismo usuario si actualizan el navegador*/
-            header('Location: index.php');
+            header('Location: inicio');
             die;
         }
+        /***************************CREACION DE USUARIOS*******************************************/
         
         
+        /***************************REDIRECCIONES DE RUTAS*****************************************/
         if($this->ruta == 'login'){
             $this->EjecutaValidacionSession();
         }
@@ -93,12 +104,13 @@ class Controlador{
             
         if($this->ruta == 'eliminar'){
             productoModelo::EliminarProducto($_GET['id_producto']);
-            header('Location: index.php?ruta=login');
+            header('Location: login');
         }
         
-        if (isset ($_GET['ruta'])){
+        if ($this->ruta != null){
             $this->EjecutaRuta();
         }
+        /***************************REDIRECCIONES DE RUTAS*****************************************/
         
     }
 
@@ -156,17 +168,4 @@ class Controlador{
         $resultado = productoModelo::BuscarProductos();
         return $resultado;
     }
-    
-    public static function BuscarProductoFoto($id_producto){
-        require_once '../modelos/productoModelo.php';
-        $resultado = productoModelo::BuscarProductoFoto($id_producto);
-        return $resultado;
-    }
-    
-    
-    public static function SubirArchivos($tabla = null, $carpeta = null, $name = 'Foto'){
-        $obj = new SubirArchivos($tabla, $carpeta, $name);
-        $resultado = $obj ->Subir();
-    }
-    
 }

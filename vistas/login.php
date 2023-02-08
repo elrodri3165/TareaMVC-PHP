@@ -3,7 +3,7 @@
         <p class="h1 text-center mb-5">Bienvenidos al login</p>
         <div class="fs-4 lh-lg bg-dark-subtle p-2 rounded-top">
             <p>Bienvenidos al login de Usuarios</p>
-            <a class="btn btn-danger btn-block" href="index.php?ruta=cerrarsesion" role="button">Salir</a>
+            <a class="btn btn-danger btn-block" href="cerrarsesion" role="button">Salir</a>
         </div>
 
         <div class="fs-4 lh-lg bg-dark-subtle p-2 mb-2 rounded-bottom">
@@ -66,13 +66,13 @@
                     {
                         data: 'id_producto',
                         render: function(data, type, row) {
-                            return '<a class="btn btn-success" role="button" href="index.php?ruta=login&id_producto=' + data + '">Modificar<a/>';
+                            return '<a class="btn btn-success" role="button" href="login?id_producto=' + data + '">Modificar<a/>';
                     }
                     },
                     {
                         data: 'id_producto',
                         render: function(data, type, row) {
-                            return '<a class="btn btn-danger" role="button" href="index.php?ruta=eliminar&id_producto=' + data + '">Eliminar<a/>';
+                            return '<a class="btn btn-danger" role="button" href="eliminar?id_producto=' + data + '">Eliminar<a/>';
                         }
                     },
                 ],

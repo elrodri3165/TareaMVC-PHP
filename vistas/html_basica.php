@@ -37,10 +37,10 @@
                     </a>
 
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="index.php?ruta=inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
-                        <li><a href="index.php?ruta=productos" class="nav-link px-2 link-secondary">Productos</a></li>
-                        <li><a href="index.php?ruta=nosotros" class="nav-link px-2 link-dark">Nosotros</a></li>
-                        <li><a href="index.php?ruta=contacto" class="nav-link px-2 link-dark">Contacto</a></li>
+                        <li><a href="inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
+                        <li><a href="productos" class="nav-link px-2 link-secondary">Productos</a></li>
+                        <li><a href="nosotros" class="nav-link px-2 link-dark">Nosotros</a></li>
+                        <li><a href="contacto" class="nav-link px-2 link-dark">Contacto</a></li>
 
                     </ul>
 
@@ -133,10 +133,10 @@
                     <div class="col-6 col-md-2 mb-3">
                         <h5>Secciones</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="index.php?ruta=inicio" class="nav-link p-0 text-white">Inicio</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=productos" class="nav-link p-0 text-white">Productos</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=nosotros" class="nav-link p-0 text-white">Nosotros</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=contacto" class="nav-link p-0 text-white">Contacto</a></li>
+                            <li class="nav-item mb-2"><a href="inicio" class="nav-link p-0 text-white">Inicio</a></li>
+                            <li class="nav-item mb-2"><a href="productos" class="nav-link p-0 text-white">Productos</a></li>
+                            <li class="nav-item mb-2"><a href="nosotros" class="nav-link p-0 text-white">Nosotros</a></li>
+                            <li class="nav-item mb-2"><a href="contacto" class="nav-link p-0 text-white">Contacto</a></li>
                         </ul>
                     </div>
 

@@ -38,7 +38,6 @@ class usuarioModelo{
         $resultado = $conexion->prepare($query);
             
         $resultado ->bindParam(":email", $datos['email'], PDO::PARAM_STR);
-        //$resultado ->bindParam(":password", $datos['password'], PDO::PARAM_STR);
         
         if($resultado->execute()){
             $result = $resultado->fetch(PDO::FETCH_ASSOC);
@@ -66,7 +65,6 @@ class usuarioModelo{
         $resultado = $conexion->prepare($query);
             
         $resultado ->bindParam(":email", $email, PDO::PARAM_STR);
-        //$resultado ->bindParam(":password", $datos['password'], PDO::PARAM_STR);
         
         if($resultado->execute()){
             $result = $resultado->fetch(PDO::FETCH_ASSOC);
