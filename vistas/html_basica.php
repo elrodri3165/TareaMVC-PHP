@@ -25,7 +25,7 @@
     <title>Proyecto MVC - PHP</title>
 </head>
 
-<body class="bg-body-secondary">
+<body class="bg-body-secondary" id="body">
     <header>
         <div class="container">
             <div class="container">
@@ -37,15 +37,16 @@
                     </a>
 
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="index.php?ruta=inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
-                        <li><a href="index.php?ruta=nosotros" class="nav-link px-2 link-dark">Nosotros</a></li>
-                        <li><a href="index.php?ruta=contacto" class="nav-link px-2 link-dark">Contacto</a></li>
+                        <li><a href="inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
+                        <li><a href="productos" class="nav-link px-2 link-secondary">Productos</a></li>
+                        <li><a href="nosotros" class="nav-link px-2 link-dark">Nosotros</a></li>
+                        <li><a href="contacto" class="nav-link px-2 link-dark">Contacto</a></li>
 
                     </ul>
 
                     <div class="col-md-3 text-end">
-                        <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#modallogin">Login</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalregistro">
+                        <button type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#modallogin">Login</button>
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalregistro">
                             Registro
                         </button>
                     </div>
@@ -53,14 +54,14 @@
             </div>
         </div>
     </header>
+    
     <main></main>
-
 
     <!-- Modal -->
     <div class="modal fade" id="modalregistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-primary">
+                <div class="modal-header bg-dark text-white">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -82,7 +83,7 @@
                             <input type="password" name="password" class="form-control rounded-3" id="password" placeholder="Password" required>
                             <label for="password">Password</label>
                         </div>
-                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Crear usuario</button>
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit">Crear usuario</button>
                         
 
                     </form>
@@ -98,7 +99,7 @@
     <div class="modal fade" id="modallogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-primary">
+                <div class="modal-header bg-dark text-white">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -112,7 +113,7 @@
                             <input type="password" name="login_password" class="form-control rounded-3" id="login_password" placeholder="Password" required>
                             <label for="login_password">Password</label>
                         </div>
-                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit">Login</button>
 
                     </form>
                 </div>
@@ -125,45 +126,30 @@
 
 
 
-    <footer>
+    <footer class="bg-dark text-white">
         <div class="container">
             <footer class="py-5">
                 <div class="row">
                     <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
+                        <h5>Secciones</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="index.php?ruta=inicio" class="nav-link p-0 text-muted">Inicio</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=contacto" class="nav-link p-0 text-muted">Contacto</a></li>
+                            <li class="nav-item mb-2"><a href="inicio" class="nav-link p-0 text-white">Inicio</a></li>
+                            <li class="nav-item mb-2"><a href="productos" class="nav-link p-0 text-white">Productos</a></li>
+                            <li class="nav-item mb-2"><a href="nosotros" class="nav-link p-0 text-white">Nosotros</a></li>
+                            <li class="nav-item mb-2"><a href="contacto" class="nav-link p-0 text-white">Contacto</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="index.php?ruta=inicio" class="nav-link p-0 text-muted">Inicio</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=contacto" class="nav-link p-0 text-muted">Contacto</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="index.php?ruta=inicio" class="nav-link p-0 text-muted">Inicio</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
-                            <li class="nav-item mb-2"><a href="index.php?ruta=contacto" class="nav-link p-0 text-muted">Contacto</a></li>
-                        </ul>
-                    </div>
+                    
 
                     <div class="col-md-5 offset-md-1 mb-3">
                         <form>
-                            <h5>Subscribe to our newsletter</h5>
-                            <p>Monthly digest of what's new and exciting from us.</p>
+                            <h5>Suscribite a nuestro newsletter</h5>
+                            <p>Mensualmente envianos nuestras promos y novedades</p>
                             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <label for="newsletter1" class="visually-hidden">Email</label>
                                 <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                                <button class="btn btn-primary" type="button">Subscribe</button>
+                                <button class="btn btn-outline-light" type="button">Enviar</button>
                             </div>
                         </form>
                     </div>

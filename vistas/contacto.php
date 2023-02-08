@@ -66,8 +66,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+                <div class="col-12 mb-2">
+                    <button class="btn btn-dark" type="submit">Enviar</button>
                 </div>
             </form>
         </div>
