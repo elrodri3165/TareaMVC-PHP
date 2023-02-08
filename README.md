@@ -8,6 +8,7 @@ Proyecto Gallo Rodrigo Nicolas Curso PHP avanzado UTN BA
 se pueden setear estos datos.
 
 /***********CONFIGURACION DE BASE DE DATOS************/
+
 define ("DBUSER",                  "root");
 
 define ("DBHOST",                  "localhost");
@@ -15,6 +16,7 @@ define ("DBHOST",                  "localhost");
 define ("DBPASSWORD",              "");
 
 define ("DBNAME",                  "php_avanzado");
+
 /***********CONFIGURACION DE BASE DE DATOS************/
 
 4. con el user "admin@admin.com" y el pass "admin" se puede ingresar como administrador del sitio para comenzar a trabajar.
